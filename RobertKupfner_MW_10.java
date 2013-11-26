@@ -18,27 +18,68 @@ public class RobertKupfner_MW_10
 {
 
     
-    public static void main(String[] args) 
+    public static void main(String[] args) throws Exception
     {
+        final String input_file = "C:\\Users\\Bob\\Desktop\\School\\CS1" +
+              "\\Homework10Files\\AA.txt";
+        final String input_file2 = "C:\\Users\\Bob\\Desktop\\School\\CS1" +
+              "\\Homework10Files\\AA2.txt";
+        final String output_file = "C:\\Users\\Bob\\Desktop\\School\\CS1" +
+              "\\Homework10Files\\Output1.txt";
+        final String output_file2 = "C:\\Users\\Bob\\Desktop\\School\\CS1" +
+              "\\Homework10Files\\Output2.txt";
+    }
+    
+    public static Scanner input_File(String INPUT_FILE) throws Exception
+    {
+        File inputDataFile = new File(INPUT_FILE);
+        
+        Scanner inputFile = new Scanner(inputDataFile);
+        
+        return inputFile;
         
     }
     
-    public static Scanner input_File(String fileLocation)
+    public static String arrayCounter (Scanner counterInput)
     {
+        int counter = 0;
+        int tooFull = 0;
+        String pad = " ";      // Padding character
+        int places = 8;        // Number of places for the final number
+        String mask = "#.0";   // Mask to use in DecimalFormat
         
-    }
-    
-    public static int arrayCounter (Scanner counterInput)
-    {
         while (counterInput.hasNext())
         {
+            counter++;
+            tooFull = counter - 20;
+        }
+        
+        if (counter <= 20)
+        {
+            return "The ammount of items sorted: " + 
+                    leftPad (counter, places, mask, pad);
+        }
+        else
+        {
+            return "The ammount of items sorted: " + 
+                    leftPad (counter, places, mask, pad) + "\n" +
+                    "The number of items not used: " + tooFull;
             
         }
     }
     
-    public static int[] inputArray (String numberInput)
+    public static int[] inputArray (Scanner numberInput)
     {
+        final int initializer = 20;
+        int[] outputArray = new int[initializer];
         
+        while (numberInput.hasNext())
+        {
+            for (int i = 0; i < initializer; i++)
+            {
+                
+            }
+        }
     }
     
     public static int arraySorter (int[] inputArray)
