@@ -45,7 +45,7 @@ public class RobertKupfner_MW_10
         int counter = 0;
         int tooFull = 0;
         String pad = " ";      // Padding character
-        int places = 8;        // Number of places for the final number
+        int places = 14;        // Number of places for the final number
         String mask = "#.0";   // Mask to use in DecimalFormat
         
         while (counterInput.hasNext())
@@ -77,9 +77,11 @@ public class RobertKupfner_MW_10
         {
             for (int i = 0; i < initializer; i++)
             {
-                
+                outputArray[i] = numberInput.nextInt();
             }
         }
+        
+        return outputArray;
     }
     
     public static int arraySorter (int[] inputArray)
@@ -87,9 +89,14 @@ public class RobertKupfner_MW_10
         
     }
     
-    public static String heading () 
+    public static String heading (String output_file) throws IOException
     {
+        FileWriter outputDataFile = new FileWriter(output_file);
         
+        PrintWriter outputFile  = new PrintWriter(outputDataFile);
+        
+        outputFile.println("Sorted Numbers");
+        outputFile.println("--------------");
     }
     
     public static String outputFormater()
